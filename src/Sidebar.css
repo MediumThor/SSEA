@@ -10,7 +10,9 @@
     transition: transform 0.3s ease;
     z-index: 1000;
     overflow-y: auto;
-    font-family: 'Space Grotesk',
+    font-family: 'Orbitron
+ ',
+
 }
 
 .sidebar.closed {
@@ -46,7 +48,7 @@
     padding: 15px 10px;
     /* Updated */
     text-decoration: none;
-    font-family: 'Space Grotesk';
+    font-family: 'Orbitron';
     color: black;
     background-color: transparent;
     border: none;

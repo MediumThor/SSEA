@@ -61,7 +61,7 @@ const Navbar = () => {
                                 Native Token Balance: {nativeTokenBalance}
                             </div>
                         )}
-                        <div className="shortened-account">{shortenAddress(account)}</div>
+                        <Account className="shortened-account"><a>{shortenAddress(account)}</a></Account>
                         <WalletButton className="wallet-button" onClick={handleDisconnectWallet}>
                             Disconnect Wallet
                         </WalletButton>
@@ -86,7 +86,7 @@ const WalletButton = styled.button`
     border-radius: 0;
     padding: 10px 20px;
     font-size: 16px;
-    font-family: 'Space Grotesk';
+    font-family: 'Orbitron';
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.9);
     transition: box-shadow 0.3s ease, background-color 0.3s ease;
@@ -95,5 +95,12 @@ const WalletButton = styled.button`
       background-color: #f0f0f0;
       box-shadow: 0 6px 8px rgba(0, 0, 0, 1);
     }
+  }
+`;
+
+const Account = styled.div`
+{
+    font-family: 'Orbitron';
+
   }
 `;
