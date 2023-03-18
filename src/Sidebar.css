@@ -1,0 +1,60 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 170px;
+    /* Updated */
+    background-color: white;
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+    font-family: 'Space Grotesk',
+}
+
+.sidebar.closed {
+    transform: translateX(-100%);
+}
+
+.sidebar.open {
+    transform: translateX(0);
+}
+
+.sidebar-toggle {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1001;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 50px;
+    /* Added */
+}
+
+.sidebar li {
+    border-bottom: 1px solid black;
+}
+
+
+.sidebar a {
+    display: block;
+    width: 100%;
+    padding: 15px 10px;
+    /* Updated */
+    text-decoration: none;
+    font-family: 'Space Grotesk';
+    color: black;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+}
+
+.sidebar a:hover {
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.1);
+}

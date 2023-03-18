@@ -1,14 +1,17 @@
 import React from 'react';
-import { useWallet } from '../WalletContext';
+import StyledDiv from '../components/StyledDiv';
+import './css/Page2.css';
 
 const Page2 = () => {
-    const { account } = useWallet();
-
     return (
-        <div>
-            <h1>Page 2</h1>
-
-        </div>
+        <>
+            <div className="title-container">
+                <h1>Welcome to Page 2</h1>
+            </div>
+            <StyledDiv>
+                {/* Add your content here */}
+            </StyledDiv>
+        </>
     );
 };
 

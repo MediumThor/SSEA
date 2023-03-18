@@ -27,15 +27,17 @@
     text-decoration: underline;
 }
 
-.navbar button {
-    cursor: pointer;
-    padding: 0.5rem 1rem;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 0.25rem;
+.account-info {
+    display: flex;
+    align-items: center;
 }
 
-.navbar button:hover {
-    background-color: #0056b3;
+.shortened-account {
+    margin-right: 10px;
+    font-family: 'Space Grotesk', sans - serif;
+}
+
+.native-token-balance {
+    margin-right: 30px;
+    font-family: 'Space Grotesk', sans-serif;
 }

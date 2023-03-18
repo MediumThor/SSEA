@@ -6,6 +6,7 @@ const WalletContext = createContext();
 export const WalletProvider = ({ children }) => {
     const [provider, setProvider] = useState(null);
     const [account, setAccount] = useState(null);
+    const [nativeTokenBalance, setNativeTokenBalance] = useState(0);
 
     useEffect(() => {
         const init = async () => {
@@ -23,7 +24,6 @@ export const WalletProvider = ({ children }) => {
             init();
         }
     }, [account]);
-
 
     const connectWallet = async () => {
         if (window.ethereum) {
@@ -43,19 +43,36 @@ export const WalletProvider = ({ children }) => {
         }
     };
 
-
-
     const disconnectWallet = () => {
         setAccount(null);
         setProvider(null);
         localStorage.setItem('walletDisconnected', 'true');
     };
 
+    const getNativeTokenBalance = async () => {
+        if (provider && account) {
+            const balance = await provider.getBalance(account);
+            setNativeTokenBalance(balance);
+        }
+    };
 
-
+    useEffect(() => {
+        if (account) {
+            getNativeTokenBalance();
+        }
+    }, [provider, account]);
 
     return (
-        <WalletContext.Provider value={{ provider, account, connectWallet, disconnectWallet }}>
+        <WalletContext.Provider
+            value={{
+                provider,
+                account,
+                nativeTokenBalance,
+                connectWallet,
+                disconnectWallet,
+                getNativeTokenBalance,
+            }}
+        >
             {children}
         </WalletContext.Provider>
     );
