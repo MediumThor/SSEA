@@ -1,6 +1,10 @@
-# Getting Started with Create React App
+## SSEA
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Super Simple Eth (Avalanche) App
+
+This project is meant as a base layer for a react app. As of now it includes a page router, and wallet connect. 
+
+The plan here is to build out an admin panel to interact with contracts via abi. 
 
 ## Available Scripts
 
