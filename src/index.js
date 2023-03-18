@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { WalletProvider } from './WalletContext';
 import App from './App';
+import { WalletProvider } from './WalletContext';
 
 ReactDOM.render(
   <React.StrictMode>

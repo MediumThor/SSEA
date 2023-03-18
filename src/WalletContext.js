@@ -1,7 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { ethers } from 'ethers';
-import { Web3Provider } from '@ethersproject/providers';
-
 
 const WalletContext = createContext();
 
@@ -11,7 +9,7 @@ export const WalletProvider = ({ children }) => {
 
     useEffect(() => {
         const init = async () => {
-            if (window.ethereum) {
+            if (window.ethereum && localStorage.getItem('walletDisconnected') !== 'true') {
                 const _provider = new ethers.providers.Web3Provider(window.ethereum);
                 setProvider(_provider);
 
@@ -25,6 +23,7 @@ export const WalletProvider = ({ children }) => {
             init();
         }
     }, [account]);
+
 
     const connectWallet = async () => {
         if (window.ethereum) {
@@ -44,8 +43,19 @@ export const WalletProvider = ({ children }) => {
         }
     };
 
+
+
+    const disconnectWallet = () => {
+        setAccount(null);
+        setProvider(null);
+        localStorage.setItem('walletDisconnected', 'true');
+    };
+
+
+
+
     return (
-        <WalletContext.Provider value={{ provider, account, connectWallet }}>
+        <WalletContext.Provider value={{ provider, account, connectWallet, disconnectWallet }}>
             {children}
         </WalletContext.Provider>
     );
