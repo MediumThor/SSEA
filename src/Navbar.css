@@ -2,9 +2,21 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 1rem;
-    background-color: #f8f9fa;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    background-color: rgba(184, 184, 184, 0.9);
+    /* Adjust the last value (0.9) to your desired transparency */
+    color: #fff;
+    padding: 1rem;
+    position: fixed;
+    /* Add this line */
+    top: 0;
+    /* Add this line */
+    left: 0;
+    /* Add this line */
+    right: 0;
+    /* Add this line */
+    z-index: 1000;
+    /* Add this line to make sure the navbar stays on top of other elements */
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
 }
 
 .navbar ul {

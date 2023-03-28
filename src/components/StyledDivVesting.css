@@ -1,0 +1,12 @@
+.styled-div {
+    width: 65%;
+    height: 700px;
+    /* Add 600px to the existing height */
+    margin: 50px auto 0;
+    /* Add 50px to the top margin */
+    padding: 20px;
+    border: 2px solid #000;
+    border-radius: 3px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.9);
+    background-color: #fff;
+}
